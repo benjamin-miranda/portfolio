@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Solar Tracker by Benjamin Miranda</title>
+		<title>Breakout PCB by Benjamin Miranda</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -52,62 +52,28 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Solar Tracker</h1>
+							<h1>Breakout PCB</h1>
 							<h4>by Benjamin Miranda</h4>
 							<span class="image main"><img src="images/solarTracker/solartrackermain.png" alt="" /></span>
 							<div class="iframe-container">
 								<iframe width="560" height="315" src="https://www.youtube.com/embed/2NtoSIh2mpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 							<p></p>
-							<p>It tracks the sun. It's as simple as that.</p>
-							<p>Ok it's a little more complicated than that. To get started, heres a list of what I used:
-								<ul>
-									<li>An Arduino (Uno or Nano)</li>
-									<li>2x '28BYJ-45' servos and the 'ULN2003' driver board that comes with them</li>
-									<li>3-4x photoresistors</li>
-									<li>3-4x 220Ω resistors</li>
-									<li>A  bunch of jumper wires</li>
-									<li>Cardboard or Thin Craft Wood or any other builfing material</li>
-									<li>5V source (not from Arduino)</li>
-								</ul>
-							</p>
-							<p>This project would work great with a solar panel and a recharable battery of some sort, but I did not have any of that so I just worked with what
-								I had.
-							</p>
-							<hr>
-							<p>The photoresistors really the heart of the porject. To 'track' the sun, the photoresistors are set up in an array with dividers in between them,
-								so that the sun can hit one more then the other. The Arduino will read the data and decide what direction to move, to ensure all photoresistors
-								will read similarlly, and therefore have the solar panel run at peak effiencey in direct sunlight.
-								In my case, I only had 3 photoresistors, so I had to work with a less optimal soultuion. 
+							<p>Here is a PCB that I designed.</p>
+							<p>It was intended to connect to the GPIO pins on a Jetson Nano. There is a <b>PCA9685</b> chip on the board the connects to 
+								the I2C pins on the Jetson. It controlls 5 servo that connect to the header pins. There is an external voltage source connection
+								that is used to power the servos since the power from the Jetson is not sufficient. There is also a connection for a cable that connects
+								to flight controller (Pixhwak).
 							</p>
 							<span>
-								<img src="images/solarTracker/photoresistors.png" alt="", class="center">
-								<img src="images/solarTracker/photoresistorsReal2.JPG" alt="", class="center">
+								<img src="images/breakoutPCB/schematic.jpg" alt="", class="center">
 							</span>
-							<hr>
-							<p>The next thing is to set up two stepper motor, one on top of the other, so that we can create 3D axis that can be used to rotate and pitch the solar panel
-								based on the photoresistor inputs. I cut small pieces of wood and attached the top stepper motor using a sticky adhesive. Also (not shown here) the bottom 
-								stepper motor should be attached to something heavy like a brick to prevent the device from falling over.
-							</p>
 							<span>
-								<img src="images/solarTracker/servoStack.JPG" alt="", class="center">
+								<img src="images/breakoutPCB/layout.jpg" alt="", class="center">
 							</span>
-							<hr>
-							<p>There are four wires per stepper motor/driver (8 in total) that conect to the 
-								digital pins of the Arduino. The photoresistors are connected in serires with a resistor that is then connect to ground. The nodes in between the 
-								photoresistors and resitors are connected to analog pins, allowing the arduino the read the voltage difference, which changes based on the light level 
-								that the photoresistor experiences. The stepper motors/drivers are powered directly by the 5V source so that enough current can be drawn. This 5V source is also
-								connected to the 'Vin' and 'GND' pins of the arduino so that everything can have one power source. The wiring may look a little messy, but I wanted it all 
-								to fit on one small breadbaord.
-							</p>
 							<span>
-								<img src="images/solarTracker/arduinoMess.JPG" alt="", class="center">
+								<img src="images/breakoutPCB/3Dviewjpg.jpg" alt="", class="center">
 							</span>
-							<hr>
-							<p>The next step is to add the pieces all together to get the final product. Here is another video of it working.</p>
-							<div class="iframe-container">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/uNrcFiWiP2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-							</div>
 						</div>
 					</div>
 
