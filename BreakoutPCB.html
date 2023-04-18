@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Solar Tracker by Benjamin Miranda</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">HOME</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<!-- 
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+							-->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Solar Tracker</h1>
+							<h4>by Benjamin Miranda</h4>
+							<span class="image main"><img src="images/solarTracker/solartrackermain.png" alt="" /></span>
+							<div class="iframe-container">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/2NtoSIh2mpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<p></p>
+							<p>It tracks the sun. It's as simple as that.</p>
+							<p>Ok it's a little more complicated than that. To get started, heres a list of what I used:
+								<ul>
+									<li>An Arduino (Uno or Nano)</li>
+									<li>2x '28BYJ-45' servos and the 'ULN2003' driver board that comes with them</li>
+									<li>3-4x photoresistors</li>
+									<li>3-4x 220Ω resistors</li>
+									<li>A  bunch of jumper wires</li>
+									<li>Cardboard or Thin Craft Wood or any other builfing material</li>
+									<li>5V source (not from Arduino)</li>
+								</ul>
+							</p>
+							<p>This project would work great with a solar panel and a recharable battery of some sort, but I did not have any of that so I just worked with what
+								I had.
+							</p>
+							<hr>
+							<p>The photoresistors really the heart of the porject. To 'track' the sun, the photoresistors are set up in an array with dividers in between them,
+								so that the sun can hit one more then the other. The Arduino will read the data and decide what direction to move, to ensure all photoresistors
+								will read similarlly, and therefore have the solar panel run at peak effiencey in direct sunlight.
+								In my case, I only had 3 photoresistors, so I had to work with a less optimal soultuion. 
+							</p>
+							<span>
+								<img src="images/solarTracker/photoresistors.png" alt="", class="center">
+								<img src="images/solarTracker/photoresistorsReal2.JPG" alt="", class="center">
+							</span>
+							<hr>
+							<p>The next thing is to set up two stepper motor, one on top of the other, so that we can create 3D axis that can be used to rotate and pitch the solar panel
+								based on the photoresistor inputs. I cut small pieces of wood and attached the top stepper motor using a sticky adhesive. Also (not shown here) the bottom 
+								stepper motor should be attached to something heavy like a brick to prevent the device from falling over.
+							</p>
+							<span>
+								<img src="images/solarTracker/servoStack.JPG" alt="", class="center">
+							</span>
+							<hr>
+							<p>There are four wires per stepper motor/driver (8 in total) that conect to the 
+								digital pins of the Arduino. The photoresistors are connected in serires with a resistor that is then connect to ground. The nodes in between the 
+								photoresistors and resitors are connected to analog pins, allowing the arduino the read the voltage difference, which changes based on the light level 
+								that the photoresistor experiences. The stepper motors/drivers are powered directly by the 5V source so that enough current can be drawn. This 5V source is also
+								connected to the 'Vin' and 'GND' pins of the arduino so that everything can have one power source. The wiring may look a little messy, but I wanted it all 
+								to fit on one small breadbaord.
+							</p>
+							<span>
+								<img src="images/solarTracker/arduinoMess.JPG" alt="", class="center">
+							</span>
+							<hr>
+							<p>The next step is to add the pieces all together to get the final product. Here is another video of it working.</p>
+							<div class="iframe-container">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/uNrcFiWiP2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+
+				<!-- Footer 
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
