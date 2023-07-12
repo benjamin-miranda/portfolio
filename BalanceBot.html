@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Breakout PCB by Benjamin Miranda</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">HOME</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<!-- 
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+							-->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Self-Balancing Bot Design</h1>
+							<h4>by Benjamin Miranda</h4>
+							<p></p>
+							<p>A self balancing robot. NOT DONE YET</p>
+							<p>In this project I am creating a schematic and PCB that will be able to power and control a self balancing robot. I dont know if I will ever create
+								a full working robot, as that will take some mechanical engineering and CAD design skills that I am not the best at, and this project
+								is to develop my electrical enginnering design skills. I am going to pretend that a mechanical design is made and just needs electronics.
+								In order make a working robot certain
+								electronic components have to be picked to acheive the design plan. Here are some of the essentials for the design:
+								<ul>
+									<li>Microcontroller</li>
+									<li>Power</li>
+									<li>Motors and Motor Controllers</li>
+									<li>Accelerometer Sensor</li>
+								</ul>
+							</p>
+							<h3>Microcontroller</h3>
+							<p>In order to select a Microcontroller for the project, I want something that was somewhat easy to use and program. I wanted to move beyond
+								Arduinos so I choose its better counterpart, and ESP32. Specificaly a ESP32-S3-WROOM. For the schematic/PCB, I followed the layout of 
+								commercial boards. This involved the UART to Serial Chip integration and the USB connection port.
+							</p>
+							<h3>Power</h3>
+							<p>Power is the most important part of the project. I plan on a 6S battery (~22.2V) being used. This voltage will be used to power the motors.
+								Next is make use of buck convertors to drop the voltage to 3.3V and 5v that can be used by the Microcontroller and other peripherals/sensors.
+								I chose switching voltage regulators over linear regulators as this is a mobile application and effiencey is important to sustain battery life.
+								I choose a chip that would be able to output 3A which is enough to power the various elctronics
+
+							</p>
+							<h2>! IN PROGRESS !</h2>
+							<span>
+								<img src="images\balancer\temp1.jpg" alt="", class="center">
+							</span>
+
+							</span>
+						</div>
+					</div>
+
+				<!-- Footer 
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer> -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
